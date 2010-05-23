@@ -1,0 +1,54 @@
+rabbitvcs
+------------------------------------------
+RabbitVCS is a set of graphical tools written to provide simple and 
+straightforward access to the version control systems you use. 
+Currently, it is integrated into the Nautilus file manager and only 
+supports Subversion.
+
+Runtime requirements:
+  python-2.6.5-1
+  python-configobj-4.7.2-1
+  python-dbus-0.83.1-1
+  python-gnomevfs2-2.28.1-1
+  python-gobject2.0-2.20.0-2
+  python-gtk2.0-2.16.0-2
+  python-gtksourceview2-2.8.0-2
+  python-gtkspell-2.27.0-2
+  python-pysvn-1.7.2-2
+
+Build requirements:
+  cygport-0.9.84-1
+  python-2.6.5-1
+
+Canonical website:
+  http://rabbitvcs.org/
+
+Canonical download:
+  http://code.google.com/p/rabbitvcs/downloads/list
+
+-------------------------------------------
+
+Build instructions:
+  unpack rabbitvcs-0.13.1-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./rabbitvcs-0.13.1-X.cygport all
+
+This will create:
+  /usr/src/rabbitvcs-0.13.1-X-src.tar.bz2
+  /usr/src/rabbitvcs-0.13.1-X.tar.bz2
+
+-------------------------------------------
+
+Port Notes:
+
+----- version 0.13.1-1 -----
+Version bump.
+
+----- version 0.12.1-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

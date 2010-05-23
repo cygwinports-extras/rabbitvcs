@@ -1,0 +1,7 @@
+category: Devel
+requires: python python-configobj python-dbus python-gnomevfs2 python-gobject2.0 python-gtk2.0 python-gtksourceview2 python-gtkspell python-pysvn
+sdesc: "Graphical tools for Subversion"
+ldesc: "RabbitVCS is a set of graphical tools written to provide simple 
+and straightforward access to the version control systems you use. 
+Currently, it is integrated into the Nautilus file manager and only 
+supports Subversion."

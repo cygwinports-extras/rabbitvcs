@@ -1,0 +1,36 @@
+inherit distutils
+
+DESCRIPTION="Graphical tools and extensions for Subversion"
+HOMEPAGE="http://rabbitvcs.org/"
+SRC_URI="http://rabbitvcs.googlecode.com/files/${P}.tar.gz"
+PATCH_URI="0.13.1-pygtksourceview2.patch"
+
+# plugin clients cause crashes when used in non-versioned directories
+
+#PKG_NAMES="${PN} python-${PN} gedit-${PN} nautilus-${PN} thunar-${PN}"
+#rabbitvcs_CONTENTS="usr/bin/ usr/share/"
+#python_rabbitvcs_CONTENTS=${PYTHON_SITELIB#/}
+#gedit_rabbitvcs_CONTENTS="usr/lib/gedit-*"
+#nautilus_rabbitvcs_CONTENTS="usr/lib/nautilus/"
+#thunar_rabbitvcs_CONTENTS="usr/lib/thunarx-*"
+
+src_install() {
+	cd ${B}
+	distutils_install
+
+	cd ${S}/clients
+
+	dobin cli/rabbitvcs
+
+#	insinto /usr/lib/gedit-2/plugins
+#	doins gedit/rabbitvcs*
+
+#	insinto /usr/lib/nautilus/extensions-2.0/python
+#	doins nautilus/RabbitVCS.py
+
+	# FIXME: thunarx-2 for 1.1.0
+#	insinto /usr/lib/thunarx-1/python
+#	doins thunar/RabbitVCS.py
+
+#	python_optimize /usr/lib/gedit-2 /usr/lib/nautilus /usr/lib/thunarx-1
+}
