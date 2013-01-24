@@ -1,0 +1,90 @@
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/action.py	2012-06-29 19:33:02.000000000 -0500
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/action.py	2013-01-20 05:50:45.641010000 -0600
+@@ -42,7 +42,6 @@ from rabbitvcs.util.decorators import gt
+ from rabbitvcs import gettext
+ _ = gettext.gettext
+ 
+-gtk.gdk.threads_init()
+ 
+ from rabbitvcs.util.log import Log
+ log = Log("rabbitvcs.ui.action")
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/add.py	2012-03-31 19:37:07.000000000 -0500
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/add.py	2013-01-20 05:50:45.657010900 -0600
+@@ -42,7 +42,6 @@ log = Log("rabbitvcs.ui.add")
+ from rabbitvcs import gettext
+ _ = gettext.gettext
+ 
+-gtk.gdk.threads_init()
+ 
+ class Add(InterfaceView, GtkContextMenuCaller):
+     """
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/browser.py	2012-09-23 00:48:35.000000000 -0500
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/browser.py	2013-01-20 05:50:45.736015400 -0600
+@@ -45,7 +45,6 @@ log = Log("rabbitvcs.ui.browser")
+ from rabbitvcs import gettext
+ _ = gettext.gettext
+ 
+-gtk.gdk.threads_init()
+ 
+ class SVNBrowser(InterfaceView, GtkContextMenuCaller):
+     def __init__(self, url):
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/checkmods.py	2010-12-27 14:35:13.000000000 -0600
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/checkmods.py	2013-01-20 05:50:45.747016100 -0600
+@@ -44,7 +44,6 @@ log = Log("rabbitvcs.ui.checkmods")
+ from rabbitvcs import gettext
+ _ = gettext.gettext
+ 
+-gtk.gdk.threads_init()
+ 
+ class SVNCheckForModifications(InterfaceView):
+     """
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/commit.py	2012-08-17 21:54:42.000000000 -0500
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/commit.py	2013-01-20 05:50:45.768017300 -0600
+@@ -44,7 +44,6 @@ log = Log("rabbitvcs.ui.commit")
+ from rabbitvcs import gettext
+ _ = gettext.gettext
+ 
+-gtk.gdk.threads_init()
+ 
+ class Commit(InterfaceView, GtkContextMenuCaller):
+     """
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/createpatch.py	2012-04-05 06:10:49.000000000 -0500
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/createpatch.py	2013-01-20 05:50:45.776017700 -0600
+@@ -45,7 +45,6 @@ log = Log("rabbitvcs.ui.createpatch")
+ from rabbitvcs import gettext
+ _ = gettext.gettext
+ 
+-gtk.gdk.threads_init()
+ 
+ class CreatePatch:
+     """
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/diff.py	2012-04-06 19:20:14.000000000 -0500
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/diff.py	2013-01-20 05:50:45.791018600 -0600
+@@ -41,7 +41,6 @@ log = Log("rabbitvcs.ui.diff")
+ from rabbitvcs import gettext
+ _ = gettext.gettext
+ 
+-gtk.gdk.threads_init()
+ 
+ class Diff(InterfaceNonView):
+     def __init__(self, path1, revision1=None, path2=None, revision2=None, 
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/lock.py	2010-12-28 10:06:11.000000000 -0600
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/lock.py	2013-01-20 05:50:45.811019700 -0600
+@@ -41,7 +41,6 @@ log = Log("rabbitvcs.ui.lock")
+ from rabbitvcs import gettext
+ _ = gettext.gettext
+ 
+-gtk.gdk.threads_init()
+ 
+ class SVNLock(InterfaceView, GtkContextMenuCaller):
+     """
+--- origsrc/rabbitvcs-0.15.2/rabbitvcs/ui/push.py	2012-06-14 09:16:05.000000000 -0500
++++ src/rabbitvcs-0.15.2/rabbitvcs/ui/push.py	2013-01-20 05:50:45.854022200 -0600
+@@ -40,7 +40,6 @@ _ = gettext.gettext
+ 
+ DATETIME_FORMAT = rabbitvcs.util.helper.DT_FORMAT_THISWEEK
+ 
+-gtk.gdk.threads_init()
+ 
+ class Push(InterfaceView):
+     def __init__(self, path):

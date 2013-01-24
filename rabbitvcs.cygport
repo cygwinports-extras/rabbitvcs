@@ -1,0 +1,40 @@
+inherit distutils
+
+NAME="rabbitvcs"
+VERSION=0.15.2
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Graphical tools for Subversion"
+DESCRIPTION="RabbitVCS is a set of graphical tools written to provide simple
+and straightforward access to the version control systems you use. Currently,
+it is integrated into the Nautilus and Thunar file managers, the Gedit text
+editor, and supports Subversion, Git, and Mercurial."
+HOMEPAGE="http://rabbitvcs.org/"
+SRC_URI="http://rabbitvcs.googlecode.com/files/${P}.tar.bz2"
+PATCH_URI="0.15.2-gthread.patch"
+
+PKG_NAMES="${NAME} gedit-${NAME} nautilus-${NAME} thunar-${NAME}"
+rabbitvcs_CONTENTS="--exclude=*-python etc/ usr/bin/ ${PYTHON_SITELIB#/} usr/share/"
+gedit_rabbitvcs_CONTENTS="usr/lib/gedit/"
+nautilus_rabbitvcs_CONTENTS="usr/share/nautilus-python/"
+thunar_rabbitvcs_CONTENTS="usr/lib/thunarx-2/"
+
+src_install() {
+	cd ${B}
+	distutils_install
+
+	cd ${S}/clients
+
+	dobin cli/rabbitvcs
+
+	insinto /usr/lib/gedit/plugins
+	doins gedit/rabbitvcs-gedit3.plugin gedit/rabbitvcs-plugin.py
+
+	insinto /usr/share/nautilus-python/extensions
+	doins nautilus-3.0/RabbitVCS.py
+
+	insinto /usr/lib/thunarx-2/python
+	doins thunar/RabbitVCS.py
+
+	python_optimize /usr/lib/{gedit,thunarx-2} /usr/share/nautilus-python/extensions
+}
